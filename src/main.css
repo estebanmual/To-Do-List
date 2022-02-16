@@ -1,7 +1,74 @@
-/*
-Write in here your css
-*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
 
 body {
-  background-color: bisque;
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+main {
+  background-color: white;
+  width: 80%;
+  height: auto;
+}
+
+img {
+  height: 20px;
+  width: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+.list-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  border-top: 1px solid gray;
+}
+
+.add-input {
+  width: 100%;
+  border: none;
+  border-top: 1px solid gray;
+  padding: 5px;
+}
+
+.add-input::placeholder {
+  font-style: italic;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  border-top: 1px solid gray;
+}
+
+li span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.clear-button {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  color: gray;
 }
