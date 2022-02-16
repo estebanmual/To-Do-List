@@ -4,7 +4,8 @@
   "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --config webpack.dev.js --open",
+    "build": "webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,18 @@
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
     "stylelint-csstree-validator": "^1.9.0",
-    "stylelint-scss": "^3.21.0"
+    "stylelint-scss": "^3.21.0",
+    "css-loader": "^6.6.0",
+    "css-minimizer-webpack-plugin": "^3.4.1",
+    "file-loader": "^6.2.0",
+    "html-loader": "^3.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.5.3",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.69.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4",
+    "webpack-merge": "^5.8.0"
   },
   "dependencies": {
     "abab": "^2.0.5",
@@ -84,6 +96,7 @@
     "chownr": "^2.0.0",
     "ci-info": "^3.3.0",
     "clean-stack": "^2.2.0",
+    "clean-webpack-plugin": "^4.0.0",
     "cli-boxes": "^2.2.1",
     "cli-cursor": "^3.1.0",
     "cli-spinners": "^2.6.1",
