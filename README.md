@@ -5,6 +5,16 @@
 > In this project you can save all of your missing tasks, you can save your grocerie list and more! Come and check it out
 
 
+## Milestones
+
+1 . in this milestone I: 
+    - Set an array of some simple to-do tasks (array of objects). Each task object contains three keys:
+        - description [string].
+        - completed [bool].
+        - index: [number].
+    - Write a function to iterate over the tasks array and populate an HTML list item element for each task.
+    - On page load render the dynamically created list of tasks in the dedicated placeholder. The list appears in order of the index values for each task.
+
 ## Built With
 
 - Webpack
