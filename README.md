@@ -1,56 +1,37 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# To Do list
 
-> Description the project.
+> In this project you can save all of your missing tasks, you can save your grocerie list and more! Come and check it out
 
+
+## Milestones
+
+1 . in this milestone I: 
+    - Set an array of some simple to-do tasks (array of objects). Each task object contains three keys:
+        - description [string].
+        - completed [bool].
+        - index: [number].
+    - Write a function to iterate over the tasks array and populate an HTML list item element for each task.
+    - On page load render the dynamically created list of tasks in the dedicated placeholder. The list appears in order of the index values for each task.
 
 ## Built With
 
-- Major languages
+- Webpack
 - Frameworks
-- Technologies used
+- HTML
+- CSS
+- JavaScript
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://estebanmual.github.io/To-Do-List/) [avilable when merge]
 
+👤 **Edgar Esteban Muñoz Alba**
 
-## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
-
-## Authors
-
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Estebanmual](https://github.com/Estebanmual)
+- Twitter: [@esteban_mual](https://twitter.com/esteban_mual)
+- LinkedIn: [Edgar Esteban Muñoz Alba](https://linkedin.com/in/esteban_mual)
 
 ## 🤝 Contributing
 
