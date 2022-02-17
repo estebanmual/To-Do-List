@@ -7,6 +7,9 @@ displayTasks();
 
 inputAdd.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
+    if (inputAdd.value === '') {
+      return false;
+    }
     e.preventDefault();
     CRUD.addTaskToList();
     window.location.reload();
