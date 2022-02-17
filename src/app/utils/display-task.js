@@ -1,9 +1,9 @@
-import tasks from './tasks.js';
+import getTasks from './tasks.js';
 import threeDots from '../../assets/three-dots.svg';
 
-const taskOrd = tasks.sort(((a, b) => a.index - b.index));
+const tasks = getTasks();
 
-function addTaskToList(task) {
+function addTaskToHTML(task) {
   const tasksList = document.querySelector('.tasks-list');
   const taskElement = document.createElement('li');
 
@@ -15,7 +15,7 @@ function addTaskToList(task) {
 }
 
 export default function displayTasks() {
-  for (let i = 0; i < taskOrd.length; i += 1) {
-    addTaskToList(taskOrd[i]);
+  for (let i = 0; i < tasks.length; i += 1) {
+    addTaskToHTML(tasks[i]);
   }
 }
