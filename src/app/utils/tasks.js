@@ -11,7 +11,7 @@ const tasks = [
   },
 ];
 
-const getTasks = function () {
+const getTasks = () => {
   let localTasks;
   if (localStorage.getItem('localTasks') === null) {
     localTasks = localStorage.setItem('localTasks', JSON.stringify(tasks));
