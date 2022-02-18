@@ -20,4 +20,14 @@ export default class CRUD {
     localStorage.setItem('localTasks', JSON.stringify(tasks));
     displayTasks();
   }
+
+  static removeTaskOfList(indexRemove) {
+    const tasks = getTasks();
+    tasks.splice(indexRemove, 1);
+    for (let i = 0; i < tasks.length; i += 1) {
+      tasks[i].index = i;
+    }
+    localStorage.setItem('localTasks', JSON.stringify(tasks));
+    displayTasks();
+  }
 }
