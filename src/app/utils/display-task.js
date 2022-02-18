@@ -1,12 +1,13 @@
 import getTasks from './tasks.js';
 import threeDots from '../../assets/three-dots.svg';
+import deleteIcon from '../../assets/delete.svg';
 
 function addTaskToHTML(task) {
   const tasksList = document.querySelector('.tasks-list');
   const taskElement = document.createElement('li');
 
   taskElement.innerHTML = `
-    <span><input type="checkbox" name="completed-checkbox">${task.description}</span> <img src="${threeDots}" alt="three dots">
+    <span><input type="checkbox" name="completed-checkbox">${task.description}</span> <span><img src="${deleteIcon}" class="delete-icon" id="${task.index}" alt="delete icon"><img src="${threeDots}" alt="three dots"><span>
     `;
 
   tasksList.appendChild(taskElement);
