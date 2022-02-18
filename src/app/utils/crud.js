@@ -30,4 +30,22 @@ export default class CRUD {
     localStorage.setItem('localTasks', JSON.stringify(tasks));
     displayTasks();
   }
+
+  static updateTaskOfList(taskToEdit) {
+    taskToEdit.setAttribute('contenteditable', true);
+  }
+
+  static saveEditTask(saveId, descriptionToSave, taskToSave) {
+    const tasks = getTasks();
+    for (let i = 0; i < tasks.length; i += 1) {
+      if (saveId === tasks[i].index) {
+        tasks[i].description = descriptionToSave;
+        localStorage.clear();
+        localStorage.setItem('localTasks', JSON.stringify(tasks));
+        displayTasks();
+        taskToSave.setAttribute('contenteditable', false);
+      }
+    }
+    taskToSave.setAttribute('contenteditable', false);
+  }
 }
