@@ -1,8 +1,6 @@
 import getTasks from './tasks.js';
 import threeDots from '../../assets/three-dots.svg';
 
-const tasks = getTasks();
-
 function addTaskToHTML(task) {
   const tasksList = document.querySelector('.tasks-list');
   const taskElement = document.createElement('li');
@@ -15,6 +13,9 @@ function addTaskToHTML(task) {
 }
 
 export default function displayTasks() {
+  const tasks = getTasks();
+  const tasksList = document.querySelector('.tasks-list');
+  tasksList.innerHTML = '';
   for (let i = 0; i < tasks.length; i += 1) {
     addTaskToHTML(tasks[i]);
   }

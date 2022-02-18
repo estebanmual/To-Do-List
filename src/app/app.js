@@ -3,7 +3,9 @@ import CRUD from './utils/crud.js';
 
 const inputAdd = document.querySelector('#add-input');
 
-displayTasks();
+document.addEventListener('DOMContentLoaded', () => {
+  displayTasks();
+});
 
 inputAdd.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
@@ -12,6 +14,7 @@ inputAdd.addEventListener('keypress', (e) => {
     }
     e.preventDefault();
     CRUD.addTaskToList();
-    window.location.reload();
+    inputAdd.value = '';
   }
+  return true;
 });

@@ -1,4 +1,5 @@
 import getTasks from './tasks.js';
+import displayTasks from './display-task.js';
 
 function Task(index, completed, description) {
   this.index = index;
@@ -15,6 +16,8 @@ export default class CRUD {
     const completedNewTask = false;
     const task = new Task(indexNewTask, completedNewTask, descriptionNewTask);
     tasks.push(task);
+    localStorage.clear();
     localStorage.setItem('localTasks', JSON.stringify(tasks));
+    displayTasks();
   }
 }
