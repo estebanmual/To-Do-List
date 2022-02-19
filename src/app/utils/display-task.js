@@ -8,8 +8,8 @@ function addTaskToHTML(task) {
   const taskElement = document.createElement('li');
 
   taskElement.innerHTML = `
-    <span><input type="checkbox" name="completed-checkbox"><p class="task-description" contenteditable="false">${task.description}</p></span> <span><img src="${editIcon}" class="edit-icon" id="${task.index}" alt="edit icon"><img src="${deleteIcon}" class="delete-icon" id="${task.index}" alt="delete icon"><img src="${threeDots}" alt="three dots"><span>
-    `;
+  <span><input type="checkbox" name="checkbox" class="checkbox" id="${task.index}"><p class="task-description" id="${task.index}" contenteditable="false">${task.description}</p></span> <span><img src="${editIcon}" class="edit-icon" id="${task.index}" alt="edit icon"><img src="${deleteIcon}" class="delete-icon" id="${task.index}" alt="delete icon"><img src="${threeDots}" alt="three dots"><span>
+  `;
 
   tasksList.appendChild(taskElement);
 }
