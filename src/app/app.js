@@ -3,10 +3,12 @@ import CRUD from './utils/crud.js';
 import checkMark from '../assets/check-mark.svg';
 import editIcon from '../assets/editIcon.svg';
 import checkboxesFunc from './utils/update-completed.js';
+import clearCompletedTasks from './utils/clear-all-completed.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   displayTasks();
   checkboxesFunc();
+  clearCompletedTasks();
   const inputAdd = document.querySelector('#add-input');
   inputAdd.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
