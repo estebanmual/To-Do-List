@@ -72,3 +72,7 @@ li span {
   border-bottom: 1px solid gray;
   color: gray;
 }
+
+.checked-box {
+  text-decoration: line-through;
+}
