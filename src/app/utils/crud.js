@@ -1,51 +1,87 @@
 import getTasks from './tasks.js';
 import displayTasks from './display-task.js';
+import checkMark from '../../assets/check-mark.svg';
+import editIcon from '../../assets/editIcon.svg';
 
-function Task(index, completed, description) {
-  this.index = index;
-  this.completed = completed;
-  this.description = description;
+class Task {
+  constructor(index, completed, description) {
+    this.index = index;
+    this.completed = completed;
+    this.description = description;
+  }
 }
 
-export default class CRUD {
-  static addTaskToList() {
+function addTaskToList() {
+  const inputAdd = document.getElementById('add-input');
+  inputAdd.addEventListener('keypress', (e) => {
     const tasks = getTasks();
     const tasksLength = tasks.length;
-    const descriptionNewTask = document.querySelector('.add-input').value;
     const indexNewTask = tasksLength;
     const completedNewTask = false;
-    const task = new Task(indexNewTask, completedNewTask, descriptionNewTask);
-    tasks.push(task);
-    localStorage.clear();
-    localStorage.setItem('localTasks', JSON.stringify(tasks));
-    displayTasks();
-  }
-
-  static removeTaskOfList(indexRemove) {
-    const tasks = getTasks();
-    tasks.splice(indexRemove, 1);
-    for (let i = 0; i < tasks.length; i += 1) {
-      tasks[i].index = i;
-    }
-    localStorage.setItem('localTasks', JSON.stringify(tasks));
-    displayTasks();
-  }
-
-  static updateTaskOfList(taskToEdit) {
-    taskToEdit.setAttribute('contenteditable', true);
-  }
-
-  static saveEditTask(saveId, descriptionToSave, taskToSave) {
-    const tasks = getTasks();
-    for (let i = 0; i < tasks.length; i += 1) {
-      if (saveId === tasks[i].index) {
-        tasks[i].description = descriptionToSave;
+    const task = new Task(indexNewTask, completedNewTask, inputAdd.value);
+    if (e.key === 'Enter') {
+      if (inputAdd.value !== '') {
+        e.preventDefault();
+        tasks.push(task);
         localStorage.clear();
         localStorage.setItem('localTasks', JSON.stringify(tasks));
         displayTasks();
-        taskToSave.setAttribute('contenteditable', false);
+        inputAdd.value = '';
       }
     }
-    taskToSave.setAttribute('contenteditable', false);
-  }
+  });
 }
+
+function removeTaskOfList() {
+  const deleteIcon = document.querySelectorAll('.delete-icon');
+  deleteIcon.forEach((element) => {
+    element.addEventListener('click', (f) => {
+      const tasks = getTasks();
+      const tasksIndex = f.target.id;
+      f.preventDefault();
+      tasks.splice(tasksIndex, 1);
+      tasks.forEach((el, i) => {
+        el.index = i;
+      });
+      localStorage.clear();
+      localStorage.setItem('localTasks', JSON.stringify(tasks));
+      displayTasks();
+    });
+  });
+}
+
+function updateTaskOfList() {
+  const taskDescriptionEdit = document.querySelectorAll('.edit-icon');
+  taskDescriptionEdit.forEach((element) => {
+    element.addEventListener('click', (e) => {
+      const taskToEdit = e.target.parentElement.previousElementSibling.lastChild;
+      taskToEdit.setAttribute('contenteditable', true);
+      e.target.src = checkMark;
+      e.target.className = 'saveEditTask';
+      const taskEditSave = document.querySelectorAll('.saveEditTask');
+      taskEditSave.forEach((ele) => {
+        ele.addEventListener('click', (f) => {
+          const taskToSave = f.target.parentElement.previousElementSibling.lastChild;
+          const descriptionToSave = f.target.parentElement.previousElementSibling.textContent;
+          const saveId = Number(f.target.id);
+          const tasks = getTasks();
+          tasks.forEach((el) => {
+            if (saveId === el.index) {
+              el.description = descriptionToSave;
+              localStorage.clear();
+              localStorage.setItem('localTasks', JSON.stringify(tasks));
+              displayTasks();
+              taskToSave.setAttribute('contenteditable', false);
+            }
+          });
+          f.target.src = editIcon;
+          f.target.className = 'edit-icon';
+        });
+      });
+    });
+  });
+}
+
+export {
+  addTaskToList, removeTaskOfList, updateTaskOfList,
+};

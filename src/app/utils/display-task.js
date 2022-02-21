@@ -18,7 +18,7 @@ export default function displayTasks() {
   const tasks = getTasks();
   const tasksList = document.querySelector('.tasks-list');
   tasksList.innerHTML = '';
-  for (let i = 0; i < tasks.length; i += 1) {
-    addTaskToHTML(tasks[i]);
-  }
+  tasks.forEach((element) => {
+    addTaskToHTML(element);
+  });
 }
