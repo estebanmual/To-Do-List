@@ -2,6 +2,9 @@ import getTasks from './tasks.js';
 import threeDots from '../../assets/three-dots.svg';
 import deleteIcon from '../../assets/delete.svg';
 import editIcon from '../../assets/editIcon.svg';
+import CRUD from './crud.js';
+import checkboxesFunc from './update-completed.js';
+import clearCompletedTasks from './clear-all-completed.js';
 
 function addTaskToHTML(task) {
   const tasksList = document.querySelector('.tasks-list');
@@ -14,11 +17,16 @@ function addTaskToHTML(task) {
   tasksList.appendChild(taskElement);
 }
 
-export default function displayTasks() {
+export default function displaytasks() {
   const tasks = getTasks();
   const tasksList = document.querySelector('.tasks-list');
   tasksList.innerHTML = '';
   tasks.forEach((element) => {
     addTaskToHTML(element);
   });
+  CRUD.addTaskToList();
+  CRUD.removeTaskOfList();
+  CRUD.updateTaskOfList();
+  checkboxesFunc();
+  clearCompletedTasks();
 }
