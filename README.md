@@ -13,9 +13,9 @@
 - CSS
 - JavaScript
 
-## Live Demo (if available)
+## Live Demo
 
-[Live Demo Link](https://estebanmual.github.io/To-Do-List/) [avilable when merge]
+[Live Demo Link](https://estebanmual.github.io/To-Do-List/)
 
 👤 **Edgar Esteban Muñoz Alba**
 
