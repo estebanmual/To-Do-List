@@ -6,7 +6,7 @@ const tasks = [
   },
   {
     index: 1,
-    completed: false,
+    completed: true,
     description: 'This task is complete 1',
   },
 ];

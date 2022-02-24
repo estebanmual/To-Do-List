@@ -468,5 +468,8 @@
     "xregexp": "^2.0.0",
     "yallist": "^4.0.0",
     "yauzl": "^2.10.0"
+  },
+  "directories": {
+    "doc": "docs"
   }
 }
